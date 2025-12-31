@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Tamer | Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --whatsapp: #25d366;
+            --insta: #E1306C;
+            --bg: #050505;
+            --card-bg: #0c0c0c;
+            --text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 25px 10%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px); z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary); }
+        .nav-links { display: flex; list-style: none; gap: 40px; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.85rem; opacity: 0.6; transition: 0.3s; text-transform: uppercase; }
+        .nav-links a:hover { opacity: 1; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        }
+        .hero h4 { color: var(--primary); letter-spacing: 6px; font-weight: 300; margin-bottom: 20px; }
+        .hero h1 { font-size: 5rem; font-weight: 900; letter-spacing: -2px; min-height: 1.2em; }
+        .cursor { display: inline-block; width: 4px; background-color: var(--primary); margin-left: 10px; animation: blink 0.8s infinite; }
+
+        /* About Section */
+        .about { padding: 120px 10%; background: #080808; text-align: center; }
+        .about h2 { font-size: 3rem; margin-bottom: 30px; font-weight: 900; }
+        .about h2 span { color: var(--primary); }
+        .about p { font-size: 1.2rem; line-height: 1.8; color: #aaa; max-width: 800px; margin: 0 auto 50px; }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; margin: 0 auto; }
+        .info-item { background: var(--card-bg); padding: 25px; border-radius: 20px; border: 1px solid #1a1a1a; transition: 0.3s; }
+        .info-item:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .info-item i { color: var(--primary); margin-bottom: 12px; font-size: 1.8rem; display: block; }
+        .info-item span { font-size: 0.75rem; color: #666; text-transform: uppercase; display: block; }
+        .info-item strong { font-size: 1.1rem; color: #fff; margin-top: 5px; display: block; }
+
+        /* Skills Section */
+        .skills { padding: 100px 10%; text-align: center; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
+        .skill-box { 
+            background: #0c0c0c; padding: 40px 20px; border-radius: 20px; 
+            border: 1px solid #1a1a1a; transition: 0.4s;
+        }
+        .skill-box:hover { border-color: var(--primary); transform: scale(1.05); }
+        .skill-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 15px; }
+
+        /* Footer & Contact Section */
+        footer {
+            padding: 100px 10% 50px;
+            text-align: center;
+            background: #050505;
+            border-top: 1px solid #111;
+        }
+        .contact-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .contact-header p { color: #666; margin-bottom: 40px; }
+
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .social-card {
+            background: #0c0c0c;
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #1a1a1a;
+            transition: 0.4s;
+        }
+
+        .social-card.wa:hover { border-color: var(--whatsapp); background: rgba(37, 211, 102, 0.05); }
+        .social-card.ig:hover { border-color: var(--insta); background: rgba(225, 48, 108, 0.05); }
+
+        .social-card i { font-size: 1.5rem; }
+        .social-card .wa-icon { color: var(--whatsapp); }
+        .social-card .ig-icon { color: var(--insta); }
+
+        .copyright { margin-top: 40px; font-size: 0.8rem; color: #333; letter-spacing: 1px; }
+
+        @keyframes blink { 50% { opacity: 0; } }
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.8rem; } 
+            .social-container { flex-direction: column; align-items: center; }
+            .social-card { width: 100%; max-width: 300px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MAHMOUD.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h4>WEB DEVELOPER</h4>
+        <h1>I'm <span id="name-target" style="color: var(--primary);"></span><span class="cursor">&nbsp;</span></h1>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About <span>Me</span></h2>
+        <p>
+            I am a 19-year-old <strong>Web Developer</strong> from Egypt, currently a student at <strong>AASTMT</strong> 
+            majoring in <strong>BIS</strong>. I am focused on creating high-performance web applications 
+            and modern digital experiences.
+        </p>
+        
+        <div class="info-grid">
+            <div class="info-item"><i class="fas fa-university"></i><span>University</span><strong>AASTMT</strong></div>
+            <div class="info-item"><i class="fas fa-graduation-cap"></i><span>Major</span><strong>BIS</strong></div>
+            <div class="info-item"><i class="fas fa-user-clock"></i><span>Age</span><strong>19 Years</strong></div>
+            <div class="info-item"><i class="fas fa-flag"></i><span>Nationality</span><strong>Egyptian</strong></div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 50px;">My <span>Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-box"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
+            <div class="skill-box"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+            <div class="skill-box"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-header">
+            <h2>Let's <span>Connect</span></h2>
+            <p>Ready to build the future of the web.</p>
+        </div>
+
+        <div class="social-container">
+            <a href="https://wa.me/201099318363" class="social-card wa" target="_blank">
+                <i class="fab fa-whatsapp wa-icon"></i>
+                <div>
+                    <span style="display:block; font-size:0.7rem; color:#666; text-align:left;">WhatsApp</span>
+                    <strong>01099318363</strong>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/mahmoud%20saad_27" class="social-card ig" target="_blank">
+                <i class="fab fa-instagram ig-icon"></i>
+                <div>
+                    <span style="display:block; font-size:0.7rem; color:#666; text-align:left;">Instagram</span>
+                    <strong>mahmoud saad_27</strong>
+                </div>
+            </a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 MAHMOUD TAMER AHMED | EGYPTIAN DEVELOPER
+        </div>
+    </footer>
+
+    <script>
+        const nameText = "Mahmoud Tamer Ahmed";
+        const target = document.getElementById('name-target');
+        let i = 0;
+
+        function type() {
+            if (i < nameText.length) {
+                target.textContent += nameText.charAt(i);
+                i++;
+                let speed = nameText.charAt(i-1) === " " ? 150 : 50;
+                setTimeout(type, speed);
+            } else {
+                target.style.textShadow = "0 0 20px rgba(0, 242, 254, 0.7)";
+            }
+        }
+        window.onload = type;
+    </script>
+</body>
+</html>
